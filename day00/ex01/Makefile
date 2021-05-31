@@ -6,6 +6,8 @@ NAME = lib.a
 
 EXC = contactapp
 
+all: $(NAME)
+
 $(NAME) :	$(SRC:.cpp=.o)
 	@g++ -Wall -Werror -Wextra -c $(SRC)
 	@ar -rc $(NAME) $(OBJ)

@@ -29,9 +29,21 @@ int main()
 			{
 				if (contact[j].iscreated == 1)
 				{
+					std::string firstname;
+					std::string lastname;
+					std::string nickname;
+
+					firstname = contact[j].FirstName.substr(0,10);
+					lastname = contact[j].LastName.substr(0,10);
+					nickname = contact[j].NickName.substr(0,10);
+					if (firstname.length() > 9)
+						firstname = firstname.insert(10, ".");
+					if (lastname.length() > 9)
+						lastname = lastname.insert(10, ".");
+					if (nickname.length() > 9)
+						nickname = nickname.insert(10, ".");
 					done = 1;
-					contact[j].trunc();
-					std::cout << j << "|" << contact[j].FirstName << "|" << contact[j].LastName << "|" << contact[j].NickName << std::endl;
+					std::cout << j << "|" << firstname << "|" << lastname << "|" << nickname << std::endl;
 				}
 				if (done == 0)
 				{
