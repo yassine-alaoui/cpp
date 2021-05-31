@@ -44,7 +44,9 @@ int main()
 			{
 				std::cout << "\033[34;4mWhich index do you desire:\033[0m" << std::endl;
 				std::cin >> thewho;
-				std::cout << "\n" << contact[thewho].FirstName << "\n" << contact[thewho].LastName << "\n" << contact[thewho].NickName << "\n" << contact[thewho].Login << "\n" << contact[thewho].Postal_Address << "\n" << contact[thewho].Email_Address << "\n" << contact[thewho].BirthDate << "\n" << contact[thewho].Favorite_Meal << "\n" << contact[thewho].Underwear_Color << "\n" << contact[thewho].Darkest_Secret << std::endl;
+				std::cout << "\n" << contact[thewho].FirstName << "\n" << contact[thewho].LastName << "\n" << contact[thewho].NickName << "\n" << contact[thewho].Login << "\n"
+					<< contact[thewho].Postal_Address << "\n" << contact[thewho].Email_Address << "\n" << contact[thewho].BirthDate << "\n" << contact[thewho].Favorite_Meal << "\n"
+						<< contact[thewho].Underwear_Color << "\n" << contact[thewho].Darkest_Secret << std::endl;
 			}
 		}
 		if (command == "ADD")
@@ -56,7 +58,7 @@ int main()
 			std::cin >> contact[i].LastName;
 			std::cout << "Please write the \033[4;3;102;30mnick name\033[0m of the new contact :" << std::endl << "=>>";
 			std::cin >> contact[i].NickName;
-			/*std::cout << "Please write the \033[4;3;102;30mlogin\033[0m of the new contact :" << std::endl << "=>>";
+			std::cout << "Please write the \033[4;3;102;30mlogin\033[0m of the new contact :" << std::endl << "=>>";
 			std::cin >> contact[i].Login;
 			std::cout << "Please write the \033[4;3;102;30mpostal address\033[0m of the new contact :" << std::endl << "=>>";
 			std::cin >> contact[i].Postal_Address;
@@ -71,7 +73,7 @@ int main()
 			std::cout << "Please write the \033[4;3;102;30mUnderear color\033[0m of the new contact :" << std::endl << "=>>";
 			std::cin >> contact[i].Underwear_Color;
 			std::cout << "Please write the \033[4;3;102;30mDarkest Secret\033[0m of the new contact :" << std::endl << "=>>";
-			std::cin >> contact[i].Darkest_Secret;*/
+			std::cin >> contact[i].Darkest_Secret;
 			i++;
 		}
 	}
