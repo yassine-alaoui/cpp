@@ -6,7 +6,7 @@
 /*   By: yaalaoui <yaalaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 10:04:38 by yaalaoui          #+#    #+#             */
-/*   Updated: 2021/06/11 12:05:07 by yaalaoui         ###   ########.fr       */
+/*   Updated: 2021/06/11 12:13:11 by yaalaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@ Fixed::Fixed(void) : fixedPointVal(0)
 Fixed::Fixed(const int value)
 {
 	this->fixedPointVal = value * (1 << Fixed::literal);
-	std::cout << "Default parametre constructor called" << std::endl;
+	std::cout << "Default parametre int constructor called" << std::endl;
 	return ;
 }
 
 Fixed::Fixed(const float value)
 {
 	this->fixedPointVal = roundf(value * (1 << Fixed::literal));
-	std::cout << "Default parametre constructor called" << std::endl;
+	std::cout << "Default parametre float constructor called" << std::endl;
 	return ;
 }
 
@@ -61,8 +61,6 @@ int Fixed::toInt( void ) const
 
 int Fixed::getRawBits( void ) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
-
 	return this->fixedPointVal;
 }
 
