@@ -1,45 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   NinjaTrap.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaalaoui <yaalaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/11 18:27:55 by yaalaoui          #+#    #+#             */
-/*   Updated: 2021/06/13 15:35:37 by yaalaoui         ###   ########.fr       */
+/*   Created: 2021/06/12 15:25:16 by yaalaoui          #+#    #+#             */
+/*   Updated: 2021/06/14 09:04:43 by yaalaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#ifndef NINJATRAP_HPP
+# define NINJATRAP_HPP
 
 # include <iostream>
 # include <stdlib.h>
 # include <time.h>
 
-class FragTrap
+# include "ClapTrap.hpp"
+# include "FragTrap.hpp"
+# include "ScavTrap.hpp"
+
+class NinjaTrap : public ClapTrap
 {
-	private:
-		int			hp;
-		int			mhp;
-		int			mp;
-		int			mmp;
-		int			lvl;
-		std::string	name;
-		int			mad;
-		int			rad;
-		int			adr;
 	public:
-		FragTrap(void);
-		FragTrap(std::string const name);
-		FragTrap(FragTrap const& val);
-		FragTrap & operator=(FragTrap const& val);
+		NinjaTrap(void);
+		NinjaTrap(std::string const name);
+		NinjaTrap(NinjaTrap const& val);
+		NinjaTrap & operator=(NinjaTrap const& val);
 		void	rangedAttack(std::string const & target);
 		void	meleeAttack(std::string const & target);
-		void	takeDamage(unsigned int amount);
-		void	beRepaired(unsigned int amount);
-		void	vaulthunter_dot_exe(std::string const & target);
-		~FragTrap();
+		void	ninjaShoebox(ScavTrap const& val);
+		void	ninjaShoebox(FragTrap const& val);
+		void	ninjaShoebox(NinjaTrap const& val);
+		void	ninjaShoebox(ClapTrap const& val);
+		~NinjaTrap();
 };
 
 #endif

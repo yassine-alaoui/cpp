@@ -1,45 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaalaoui <yaalaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/11 18:27:55 by yaalaoui          #+#    #+#             */
-/*   Updated: 2021/06/13 15:35:37 by yaalaoui         ###   ########.fr       */
+/*   Created: 2021/06/12 08:25:08 by yaalaoui          #+#    #+#             */
+/*   Updated: 2021/06/14 08:54:27 by yaalaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
 # include <iostream>
 # include <stdlib.h>
 # include <time.h>
 
-class FragTrap
+# include "ClapTrap.hpp"
+
+class ScavTrap : public ClapTrap
 {
-	private:
-		int			hp;
-		int			mhp;
-		int			mp;
-		int			mmp;
-		int			lvl;
-		std::string	name;
-		int			mad;
-		int			rad;
-		int			adr;
 	public:
-		FragTrap(void);
-		FragTrap(std::string const name);
-		FragTrap(FragTrap const& val);
-		FragTrap & operator=(FragTrap const& val);
+		ScavTrap(void);
+		ScavTrap(std::string const name);
+		ScavTrap(ScavTrap const& val);
+		ScavTrap & operator=(ScavTrap const& val);
 		void	rangedAttack(std::string const & target);
 		void	meleeAttack(std::string const & target);
-		void	takeDamage(unsigned int amount);
-		void	beRepaired(unsigned int amount);
-		void	vaulthunter_dot_exe(std::string const & target);
-		~FragTrap();
+		void	challengeNewcomer(void);
+		~ScavTrap();
 };
 
 #endif

@@ -6,19 +6,32 @@
 /*   By: yaalaoui <yaalaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/11 18:27:50 by yaalaoui          #+#    #+#             */
-/*   Updated: 2021/06/12 11:29:52 by yaalaoui         ###   ########.fr       */
+/*   Updated: 2021/06/12 10:59:19 by yaalaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main()
 {
-	FragTrap minion("ahmed");
+	{
+		FragTrap minion("ahmed");
 
-	minion.vaulthunter_dot_exe("khoh");
-	minion.takeDamage(100);
-	minion.beRepaired(500);
-	minion.vaulthunter_dot_exe("khoh");
-	minion.vaulthunter_dot_exe("khoh");
+		minion.vaulthunter_dot_exe("khoh");
+		minion.takeDamage(100);
+		minion.beRepaired(500);
+		minion.vaulthunter_dot_exe("khoh");
+		minion.vaulthunter_dot_exe("khoh");
+	}
+	{
+		std::cout << "--------------" << std::endl;
+		ScavTrap minion("ahmed");
+
+		minion.takeDamage(100);
+		minion.beRepaired(500);
+		minion.rangedAttack("khoh");
+		minion.meleeAttack("khoh");
+		minion.challengeNewcomer();
+	}
 }

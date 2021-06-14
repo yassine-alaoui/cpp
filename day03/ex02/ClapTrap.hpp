@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaalaoui <yaalaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/11 18:27:55 by yaalaoui          #+#    #+#             */
-/*   Updated: 2021/06/13 15:35:37 by yaalaoui         ###   ########.fr       */
+/*   Created: 2021/06/12 11:30:13 by yaalaoui          #+#    #+#             */
+/*   Updated: 2021/06/14 08:48:28 by yaalaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#ifndef CLAPTRAP_HPP
+# define CLAPTRAP_HPP
 
 # include <iostream>
 # include <stdlib.h>
 # include <time.h>
 
-class FragTrap
+class ClapTrap
 {
-	private:
+	protected:
 		int			hp;
 		int			mhp;
 		int			mp;
@@ -29,17 +29,15 @@ class FragTrap
 		int			mad;
 		int			rad;
 		int			adr;
+	private:
 	public:
-		FragTrap(void);
-		FragTrap(std::string const name);
-		FragTrap(FragTrap const& val);
-		FragTrap & operator=(FragTrap const& val);
-		void	rangedAttack(std::string const & target);
-		void	meleeAttack(std::string const & target);
+		ClapTrap(void);
+		ClapTrap(std::string const name);
+		ClapTrap(ClapTrap const& val);
+		ClapTrap & operator=(ClapTrap const& val);
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
-		void	vaulthunter_dot_exe(std::string const & target);
-		~FragTrap();
+		~ClapTrap();
 };
 
 #endif
