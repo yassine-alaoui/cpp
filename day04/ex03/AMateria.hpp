@@ -6,7 +6,7 @@
 /*   By: yaalaoui <yaalaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/18 10:38:44 by yaalaoui          #+#    #+#             */
-/*   Updated: 2021/06/20 13:00:53 by yaalaoui         ###   ########.fr       */
+/*   Updated: 2021/06/21 13:20:59 by yaalaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@
 class AMateria
 {
 	private:
-		AMateria() {};
 	protected:
 		unsigned int _xp;
 		std::string	_type;
 	public:
+		AMateria() {};
 		AMateria(std::string const & type);
 		AMateria(AMateria const& val);
 		AMateria & operator=(AMateria const& val);
