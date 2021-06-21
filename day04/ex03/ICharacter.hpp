@@ -6,14 +6,14 @@
 /*   By: yaalaoui <yaalaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 13:01:00 by yaalaoui          #+#    #+#             */
-/*   Updated: 2021/06/21 16:08:47 by yaalaoui         ###   ########.fr       */
+/*   Updated: 2021/06/21 16:20:01 by yaalaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICHARACTER_HPP
 # define ICHARACTER_HPP
 
-# include "AMateria.hpp"
+class AMateria;
 
 class ICharacter
 {

@@ -6,7 +6,7 @@
 /*   By: yaalaoui <yaalaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 13:45:12 by yaalaoui          #+#    #+#             */
-/*   Updated: 2021/06/21 15:02:37 by yaalaoui         ###   ########.fr       */
+/*   Updated: 2021/06/21 17:10:00 by yaalaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define IMATERIASOURCE_HPP
 
 # include "AMateria.hpp"
+# include "ICharacter.hpp"
 
 class IMateriaSource
 {
