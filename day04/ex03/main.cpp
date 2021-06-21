@@ -6,7 +6,7 @@
 /*   By: yaalaoui <yaalaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 15:54:03 by yaalaoui          #+#    #+#             */
-/*   Updated: 2021/06/21 17:17:07 by yaalaoui         ###   ########.fr       */
+/*   Updated: 2021/06/21 17:30:56 by yaalaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ int main()
 	tmp = src->createMateria("cure");
 	me->equip(tmp);
 	ICharacter* bob = new Character("bob");
-	//me->use(0, *bob);
-	//me->use(1, *bob);
+	me->use(0, *bob);
+	me->use(1, *bob);
 	delete bob;
 	delete me;
 	delete src;

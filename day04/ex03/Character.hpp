@@ -6,7 +6,7 @@
 /*   By: yaalaoui <yaalaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/20 11:20:49 by yaalaoui          #+#    #+#             */
-/*   Updated: 2021/06/21 17:17:36 by yaalaoui         ###   ########.fr       */
+/*   Updated: 2021/06/21 17:31:20 by yaalaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,8 @@ class Character : public ICharacter
 
 Character::Character(std::string const name)
 {
-	*_materias = NULL;
+	for (int i = 0; i < 4; i++)
+		_materias[i] = 0;
 	this->_count = 0;
 	this->_name = name;
 }
@@ -52,7 +53,10 @@ Character & Character::operator=(Character const& val)
 
 	i = 0;
 	while (i < 4)
+	{
 		delete _materias[i];
+		i++;
+	}
 	i = 0;
 	this->_name = val._name;
 	this->_count = val._count;
@@ -97,7 +101,10 @@ Character::~Character()
 
 	i = 0;
 	while (i < 4)
+	{
 		delete _materias[i];
+		i++;
+	}
 }
 
 
