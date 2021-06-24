@@ -1,43 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Enemy.cpp                                          :+:      :+:    :+:   */
+/*   Chef.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaalaoui <yaalaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/15 11:27:17 by yaalaoui          #+#    #+#             */
-/*   Updated: 2021/06/22 14:15:37 by yaalaoui         ###   ########.fr       */
+/*   Created: 2021/06/15 11:29:53 by yaalaoui          #+#    #+#             */
+/*   Updated: 2021/06/24 10:28:22 by yaalaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Enemy.hpp"
+# include "Chef.hpp"
 
-Enemy::Enemy(Enemy const& val)
+Chef::Chef(void)
 {
-	*this = val;
+	this->_hp = 80;
+	this->_type = "Chef";
+	std::cout << "* click click click *" << std::endl;
 	return ;
 }
 
-Enemy & Enemy::operator=(Enemy const& val)
+Chef::Chef(Chef const& val)
 {
+	*this = val;
+	std::cout << "* click click click *" << std::endl;
+	return ;
+}
+
+Chef & Chef::operator=(Chef const& val)
+{
+	std::cout << "* click click click *" << std::endl;
 	this->_hp = val.getHP();
 	this->_type = val.getType();
 	return *this;
 }
 
-void	Enemy::takeDamage(int val)
+void	Chef::takeDamage(int val)
 {
-	if (val <= 0)
-		return ;
-	_hp = _hp < val ? 0 : _hp - val;
+	Enemy::takeDamage(val);
 }
 
-std::string Enemy::getType() const
+Chef::~Chef()
 {
-	return _type;
-}
-
-int Enemy::getHP() const
-{
-	return _hp;
+	std::cout << "* SPROTCH *" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: yaalaoui <yaalaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 11:37:45 by yaalaoui          #+#    #+#             */
-/*   Updated: 2021/06/14 11:47:29 by yaalaoui         ###   ########.fr       */
+/*   Updated: 2021/06/24 10:12:45 by yaalaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Victim
 		Victim(std::string name);
 		std::string	getName(void) const;
 		virtual void	getPolymorphed(void) const;
-		~Victim(void);
+		virtual	~Victim(void);
 };
 
 std::ostream	&operator << (std::ostream &output, Victim const& val);

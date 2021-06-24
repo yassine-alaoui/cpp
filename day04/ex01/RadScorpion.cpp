@@ -6,7 +6,7 @@
 /*   By: yaalaoui <yaalaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 11:29:53 by yaalaoui          #+#    #+#             */
-/*   Updated: 2021/06/15 11:30:11 by yaalaoui         ###   ########.fr       */
+/*   Updated: 2021/06/24 10:28:22 by yaalaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ RadScorpion & RadScorpion::operator=(RadScorpion const& val)
 
 void	RadScorpion::takeDamage(int val)
 {
-	val -= 3;
 	Enemy::takeDamage(val);
 }
 

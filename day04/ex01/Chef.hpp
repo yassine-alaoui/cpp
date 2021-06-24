@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Chef.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaalaoui <yaalaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/14 11:02:28 by yaalaoui          #+#    #+#             */
-/*   Updated: 2021/06/24 11:08:17 by yaalaoui         ###   ########.fr       */
+/*   Created: 2021/06/15 13:00:31 by yaalaoui          #+#    #+#             */
+/*   Updated: 2021/06/24 10:38:08 by yaalaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Sorcerer.hpp"
-# include "Peon.hpp"
-# include "BoxingBag.hpp"
+#ifndef CHEF_HPP
+# define CHEF_HPP
 
-int main()
+# include <iostream>
+
+# include "Enemy.hpp"
+
+class Chef : public Enemy
 {
-	Sorcerer robert("Robert", "the Magnificent");
-	Victim jim("Jimmy");
-	Peon joe("Joe");
-	BoxingBag btata("Btata");
-	std::cout << robert << jim << joe << btata;
-	robert.polymorph(jim);
-	robert.polymorph(joe);
-	robert.polymorph(btata);
-	return 0;
-}
+	private:
+	public:
+		Chef(void);
+		Chef(Chef const& val);
+		Chef(int hp, std::string const & type);
+		Chef & operator=(Chef const& val);
+		void takeDamage(int val);
+		virtual ~Chef();
+};
+
+#endif

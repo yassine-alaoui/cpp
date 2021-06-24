@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ISquad.hpp                                         :+:      :+:    :+:   */
+/*   BoxingBag.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yaalaoui <yaalaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/15 13:20:44 by yaalaoui          #+#    #+#             */
-/*   Updated: 2021/06/24 11:27:24 by yaalaoui         ###   ########.fr       */
+/*   Created: 2021/06/14 11:36:06 by yaalaoui          #+#    #+#             */
+/*   Updated: 2021/06/24 10:20:58 by yaalaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ISQUAD_HPP
-# define ISQUAD_HPP
+#ifndef BOXINGBAG_HPP
+# define BOXINGBAG_HPP
 
 # include <iostream>
+# include "Victim.hpp"
 
-# include "ISpaceMarine.hpp"
-
-class ISquad
+class BoxingBag : public Victim
 {
+	private:
+		std::string	_name;
+		BoxingBag(void);
 	public:
-		virtual ~ISquad() {}
-		virtual int getCount() const = 0;
-		virtual ISpaceMarine* getUnit(int num) const = 0;
-		virtual int push(ISpaceMarine* val) = 0;
+		BoxingBag(BoxingBag const& val);
+		BoxingBag &operator=(BoxingBag const& val);
+		BoxingBag(std::string name);
+		std::string	getName(void) const;
+		void	getPolymorphed(void) const;
+		virtual ~BoxingBag(void);
 };
+
+std::ostream	&operator << (std::ostream &output, BoxingBag const& val);
 
 #endif

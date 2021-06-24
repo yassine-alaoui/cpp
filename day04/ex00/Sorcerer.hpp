@@ -6,7 +6,7 @@
 /*   By: yaalaoui <yaalaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/14 11:36:59 by yaalaoui          #+#    #+#             */
-/*   Updated: 2021/06/14 11:47:55 by yaalaoui         ###   ########.fr       */
+/*   Updated: 2021/06/24 10:19:53 by yaalaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ class Sorcerer
 		std::string	getName(void) const;
 		std::string	getTitle(void) const;
 		void polymorph(Victim const &val) const;
-		~Sorcerer(void);
+		virtual ~Sorcerer(void);
 };
 
 std::ostream	&operator << (std::ostream &output, Sorcerer const& val);

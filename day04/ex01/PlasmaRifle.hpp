@@ -6,7 +6,7 @@
 /*   By: yaalaoui <yaalaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 13:00:21 by yaalaoui          #+#    #+#             */
-/*   Updated: 2021/06/15 13:00:23 by yaalaoui         ###   ########.fr       */
+/*   Updated: 2021/06/24 10:37:08 by yaalaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class PlasmaRifle : public AWeapon
 		int getDamage() const;
 		std::string getName() const;
 		virtual void attack() const;
-		~PlasmaRifle();
+		virtual ~PlasmaRifle();
 };
 
 #endif

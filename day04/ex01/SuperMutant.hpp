@@ -6,7 +6,7 @@
 /*   By: yaalaoui <yaalaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/15 13:00:35 by yaalaoui          #+#    #+#             */
-/*   Updated: 2021/06/15 13:00:36 by yaalaoui         ###   ########.fr       */
+/*   Updated: 2021/06/24 10:40:40 by yaalaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class SuperMutant : public Enemy
 		SuperMutant(int hp, std::string const & type);
 		SuperMutant & operator=(SuperMutant const& val);
 		void takeDamage(int val);
-		~SuperMutant();
+		virtual ~SuperMutant();
 };
 
 #endif
