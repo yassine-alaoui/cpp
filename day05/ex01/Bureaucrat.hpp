@@ -15,6 +15,8 @@
 
 # include <iostream>
 # include <exception>
+class Bureaucrat;
+# include "Form.hpp"
 
 class Bureaucrat
 {
@@ -23,27 +25,22 @@ class Bureaucrat
 		unsigned int		_grade;
 		Bureaucrat(void);
 	public:
-		class GradeTooHigh : public std::exception
+		class GradeTooHighException : public std::exception
 		{
-			virtual const char *what() const throw()
-			{
-				return "Grade too High!";
-			}
+			virtual const char *what() const throw();
 		};
-		class GradeTooLow : public std::exception
+		class GradeTooLowException : public std::exception
 		{
-			virtual const char *what() const throw()
-			{
-				return "Grade too Low!";
-			}
+			virtual const char *what() const throw();
 		};
 		Bureaucrat(std::string const name, unsigned int grade);
 		Bureaucrat(Bureaucrat const& val);
-		Bureaucrat & operator=(Bureaucrat const& val);
+		Bureaucrat & 		operator=(Bureaucrat const& val);
 		std::string 		getname(void) const;
 		unsigned int  		getgrade(void) const;
 		void				incrementGrade();
 		void				decrementGrade();
+		void				signform(bool isigned, Form const & val) const;
 		~Bureaucrat();
 };
 

@@ -28,12 +28,22 @@ unsigned int 		Bureaucrat::getgrade(void) const
 	return _grade;
 }
 
+const char* Bureaucrat::GradeTooLowException::what() const throw()
+{
+	return "Grade too Low!";
+}
+
+const char* Bureaucrat::GradeTooHighException::what() const throw()
+{
+	return "Grade too High!";
+}
+
 void				Bureaucrat::incrementGrade()
 {
 	try
 	{
 		if (this->_grade - 1 < 1)
-			throw GradeTooHigh();
+			throw GradeTooHighException();
 		else
 			this->_grade--;
 	}
@@ -48,7 +58,7 @@ void				Bureaucrat::decrementGrade()
 	try
 	{
 		if (this->_grade + 1 > 150)
-			throw GradeTooLow();
+			throw GradeTooLowException();
 		else
 			this->_grade++;
 	}
@@ -63,9 +73,9 @@ Bureaucrat::Bureaucrat(std::string const name, unsigned int grade) : _name(name)
 	try
 	{
 		if (grade > 150)
-			throw GradeTooLow();
+			throw GradeTooLowException();
 		else if (grade < 1)
-			throw GradeTooHigh();
+			throw GradeTooHighException();
 		else
 		{
 			_grade = grade;

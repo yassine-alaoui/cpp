@@ -14,14 +14,40 @@
 # define FORM_HPP
 
 # include <iostream>
+class Form;
+# include "Bureaucrat.hpp"
 
 class Form
 {
 	private:
-		std::string const	_name;
-		bool		const	_signed;
-		unsigned int		_minGradetosign;
-		unsigned int		_minGradetoexecute;
-}
+		std::string			_name;
+		bool				_signed;
+		unsigned int const	_minGradetosign;
+		unsigned int const	_minGradetoexecute;
+		Form();
+	public:
+		class GradeTooHighException : public std::exception
+		{
+			virtual const char *what() const throw()
+			{
+				return "Grade too High!";
+			}
+		};
+		class GradeTooLowException : public std::exception
+		{
+			virtual const char *what() const throw()
+			{
+				return "Grade too Low!";
+			}
+		};
+		Form(std::string name, bool sign, unsigned int mintosign, unsigned int mintoexecute);
+		Form(Form const & val);
+		Form & 				operator=(Form const & val);
+		std::string 		getName() const;
+		bool				getStat() const;
+		unsigned int 		getGradeToSign() const;
+		unsigned int		getGradeToExecute() const;
+		void				beSigned(Bureaucrat const& val);
+};
 
 #endif

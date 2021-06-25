@@ -2,9 +2,10 @@
 
 int main()
 {
-	Bureaucrat test0("Intitled", 0);
-	Bureaucrat test("yassine", 2);
-	Bureaucrat test1("ahmed", 150);
+	Bureaucrat	test0("Intitled", 0);
+	Bureaucrat	test("yassine", 2);
+	Bureaucrat	test1("ahmed", 150);
+	Form		form("lol", 0, 5, 2);
 
 	test.incrementGrade();
 	std::cout << test;
@@ -13,4 +14,6 @@ int main()
 	std::cout << test1;
 	test1.decrementGrade();
 	std::cout << test1;
+	form.beSigned(test);
+	form.beSigned(test1);
 }
