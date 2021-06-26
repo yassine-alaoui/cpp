@@ -6,7 +6,7 @@
 /*   By: yaalaoui <yaalaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/26 16:32:40 by yaalaoui          #+#    #+#             */
-/*   Updated: 2021/06/26 20:06:29 by yaalaoui         ###   ########.fr       */
+/*   Updated: 2021/06/26 20:29:15 by yaalaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ Form * Intern::makeForm(std::string form, std::string target)
 	toForms[1] = new RobotomyRequestForm(target);
 	toForms[2] = new ShrubberyCreationForm(target);
 	toForms[3] = 0;
-	(void)target;
 	tmp = form;
 	tmp.erase(std::remove(tmp.begin(), tmp.end(), ' '), tmp.end());
 	for (int j = 0; j < (int)tmp.length(); j++)
