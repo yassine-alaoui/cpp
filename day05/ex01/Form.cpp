@@ -72,12 +72,9 @@ void	Form::beSigned(Bureaucrat const& val)
 		if (val.getgrade() <= this->_minGradetosign)
 		{
 			this->_signed = 1;
-			val.signform(true, *this);
 		}
 		else
 		{
-			this->_signed = 0;
-			val.signform(false, *this);
 			throw GradeTooLowException();
 		}
 	}
@@ -85,7 +82,6 @@ void	Form::beSigned(Bureaucrat const& val)
 	{
 		std::cerr << e.what() << '\n';
 	}
-	
 }
 
 std::ostream	&operator << (std::ostream &output, Form const& val)

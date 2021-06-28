@@ -14,9 +14,11 @@ int main()
 	std::cout << test << " ---------- \n";
 	std::cout << test1;
 	test1.decrementGrade();
-	std::cout << test1;
-	form.beSigned(test);
-	form.beSigned(test1);
-	form1.beSigned(test1);
+	std::cout << test1 << " ---------- \n";
+	std::cout << " ---------- \n";
+	test1.signForm(form);
+	std::cout << form;
+	std::cout << " ---------- \n";
+	test.signForm(form);
 	std::cout << form;
 }

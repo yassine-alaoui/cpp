@@ -6,7 +6,7 @@
 /*   By: yaalaoui <yaalaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 15:17:32 by yaalaoui          #+#    #+#             */
-/*   Updated: 2021/06/26 15:06:04 by yaalaoui         ###   ########.fr       */
+/*   Updated: 2021/06/28 13:17:50 by yaalaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,10 @@ class Form
 			virtual const char *what() const throw();
 		};
 		class GradeTooLowException : public std::exception
+		{
+			virtual const char *what() const throw();
+		};
+		class NotSigned : public std::exception
 		{
 			virtual const char *what() const throw();
 		};

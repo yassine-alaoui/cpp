@@ -15,7 +15,6 @@ int main()
 	Intern		hamid;
 	Form*		tmp;
 
-
 	test.incrementGrade();
 	std::cout << test;
 	test.incrementGrade();
@@ -24,15 +23,26 @@ int main()
 	test1.decrementGrade();
 	std::cout << test1;
 	std::cout << " ---------- \n";
-	form.execute(test1);
-	form.execute(test);
+	std::cout << form;
+	test.executeForm(form);
+	test.signForm(form);
+	std::cout << form;
+	test.executeForm(form);
 	std::cout << " ---------- \n";
-	form1.execute(test1);
-	form1.execute(test);
+	std::cout << form1;
+	test.executeForm(form1);
+	test.signForm(form1);
+	std::cout << form1;
+	test.executeForm(form1);
 	std::cout << " ---------- \n";
-	form2.execute(test1);
-	form2.execute(test);
+	std::cout << form2;
+	test.executeForm(form2);
+	test.signForm(form2);
+	std::cout << form2;
+	test.executeForm(form2);
 	std::cout << " ---------- \n";
-	tmp = hamid.makeForm("robotomy request", "aljk");
-	tmp->execute(test);
+	tmp = hamid.makeForm("robotomy request", "testform");
+	test.executeForm(*tmp);
+	test.signForm(*tmp);
+	test.executeForm(*tmp);
 }

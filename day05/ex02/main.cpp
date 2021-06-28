@@ -11,9 +11,6 @@ int main()
 	ShrubberyCreationForm form("home");
 	RobotomyRequestForm form1("mohammed");
 	PresidentialPardonForm form2("abdo");
-	//Form		form("lol", 0, 5, 2);
-	//Form		form1("lore", 0, 100, 1);
-
 
 	test.incrementGrade();
 	std::cout << test;
@@ -23,13 +20,21 @@ int main()
 	test1.decrementGrade();
 	std::cout << test1;
 	std::cout << " ---------- \n";
-	form.execute(test1);
-	form.execute(test);
+	std::cout << form;
+	test.executeForm(form);
+	test.signForm(form);
+	std::cout << form;
+	test.executeForm(form);
 	std::cout << " ---------- \n";
-	form1.execute(test1);
-	form1.execute(test);
+	std::cout << form1;
+	test.executeForm(form1);
+	test.signForm(form1);
+	std::cout << form1;
+	test.executeForm(form1);
 	std::cout << " ---------- \n";
-	form2.execute(test1);
-	form2.execute(test);
-	std::cout << " ---------- \n";
+	std::cout << form2;
+	test.executeForm(form2);
+	test.signForm(form2);
+	std::cout << form2;
+	test.executeForm(form2);
 }

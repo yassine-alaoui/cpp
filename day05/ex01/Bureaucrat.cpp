@@ -6,7 +6,7 @@
 /*   By: yaalaoui <yaalaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 12:41:08 by yaalaoui          #+#    #+#             */
-/*   Updated: 2021/06/26 12:08:07 by yaalaoui         ###   ########.fr       */
+/*   Updated: 2021/06/28 13:04:15 by yaalaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,15 +69,28 @@ const char* Bureaucrat::GradeTooHighException::what() const throw()
 	return "Grade too High!";
 }
 
-void			Bureaucrat::signform(bool isigned, Form const & val) const
+void			Bureaucrat::signForm(Form & val)
 {
-	(void)isigned;
-	if (val.getStat())
-		std::cout << this->getname() << " signs " << val.getName() << "\n";
-	else
-		std::cout << this->getname() << " cannot sign " << val.getName()
-			<< " because " << val.getGradeToSign() << " is higher grade than "
-				<< this->getgrade() << "\n";
+	try
+	{
+		if (val.getStat())
+			throw Form::AlreadySigned();
+		if (this->_grade <= val.getGradeToSign())
+		{
+			std::cout << this->getname() << " signs " << val.getName() << "\n";
+			val.beSigned(*this);
+		}
+		else
+		{
+			std::cout << this->getname() << " cannot sign " << val.getName()
+				<< " because ";
+			throw GradeTooLowException();
+		}
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 }
 
 Bureaucrat::Bureaucrat(std::string const name, unsigned int grade) : _name(name)

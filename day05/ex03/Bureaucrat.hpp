@@ -6,7 +6,7 @@
 /*   By: yaalaoui <yaalaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/24 12:42:03 by yaalaoui          #+#    #+#             */
-/*   Updated: 2021/06/26 14:37:54 by yaalaoui         ###   ########.fr       */
+/*   Updated: 2021/06/28 13:12:01 by yaalaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ class Bureaucrat
 		unsigned int  		getgrade(void) const;
 		void				incrementGrade();
 		void				decrementGrade();
-		void				signform(bool isigned, Form const & val) const;
+		void				signForm(Form & val);
+		void				executeForm(Form const & form);
 		~Bureaucrat();
 };
 
