@@ -11,6 +11,7 @@ Data::Data(Data const& val)
 
 Data & Data::operator = (Data const& val)
 {
+	(void)val;
 	return *this;
 }
 

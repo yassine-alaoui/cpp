@@ -19,5 +19,14 @@ Data* deserialize(uintptr_t raw)
 
 int main()
 {
-	//here
+	Data *ptr = new Data;
+	uintptr_t tmp;
+	Data *test;
+
+
+	tmp = serialize(ptr);
+	test = deserialize(tmp);
+	std::cout << "original pointer " << ptr << "\n";
+	std::cout << "serializer " << tmp << "\n";
+	std::cout << "deserialized pointer " << test << "\n";
 }
