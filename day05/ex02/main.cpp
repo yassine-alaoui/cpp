@@ -5,23 +5,23 @@
 
 int main()
 {
-	Bureaucrat	test0("Intitled", 0);
+	try
+	{
+		Bureaucrat test0("Intitled", 0);
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << e.what() << '\n';
+	}
 	Bureaucrat	test("yassine", 2);
 	Bureaucrat	test1("ahmed", 150);
 	ShrubberyCreationForm form("home");
 	RobotomyRequestForm form1("mohammed");
 	PresidentialPardonForm form2("abdo");
 
-	test.incrementGrade();
-	std::cout << test;
-	test.incrementGrade();
-	std::cout << test << " ---------- \n";
-	std::cout << test1;
-	test1.decrementGrade();
-	std::cout << test1;
-	std::cout << " ---------- \n";
 	std::cout << form;
 	test.executeForm(form);
+	test.signForm(form);
 	test.signForm(form);
 	std::cout << form;
 	test.executeForm(form);

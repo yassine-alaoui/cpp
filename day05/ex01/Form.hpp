@@ -6,7 +6,7 @@
 /*   By: yaalaoui <yaalaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/25 15:17:32 by yaalaoui          #+#    #+#             */
-/*   Updated: 2021/06/28 13:00:09 by yaalaoui         ###   ########.fr       */
+/*   Updated: 2021/07/01 10:21:44 by yaalaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Form;
 class Form
 {
 	private:
-		std::string			_name;
+		std::string	const	_name;
 		bool				_signed;
 		unsigned int const	_minGradetosign;
 		unsigned int const	_minGradetoexecute;

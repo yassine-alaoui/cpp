@@ -3,17 +3,10 @@
 Form::Form(std::string name, bool sign, unsigned int mintosign, unsigned int mintoexecute) : _name(name), _minGradetosign(mintosign), _minGradetoexecute(mintoexecute)
 {
 	_signed = sign;
-	try
-	{
-		if (mintoexecute < 1 || mintosign < 1)
-			throw GradeTooHighException();
-		if (mintoexecute > 150 || mintosign > 150)
-			throw GradeTooLowException();
-	}
-	catch(const std::exception& e)
-	{
-		std::cerr << e.what() << '\n';
-	}
+	if (mintoexecute < 1 || mintosign < 1)
+		throw GradeTooHighException();
+	if (mintoexecute > 150 || mintosign > 150)
+		throw GradeTooLowException();
 }
 
 Form::Form(Form const & val) : _name(val._name), _minGradetosign(val._minGradetosign), _minGradetoexecute(val._minGradetoexecute)
@@ -23,7 +16,6 @@ Form::Form(Form const & val) : _name(val._name), _minGradetosign(val._minGradeto
 
 Form & Form::operator=(Form const & val)
 {
-	this->_name = val._name;
 	this->_signed = val._signed;
 	return *this;
 }

@@ -6,7 +6,7 @@
 /*   By: yaalaoui <yaalaoui@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/26 16:32:40 by yaalaoui          #+#    #+#             */
-/*   Updated: 2021/06/26 20:29:15 by yaalaoui         ###   ########.fr       */
+/*   Updated: 2021/07/01 10:36:13 by yaalaoui         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ Form * Intern::makeForm(std::string form, std::string target)
 	for (int j = 0; j < (int)tmp.length(); j++)
 		tmp[j] = tolower(tmp[j]);
 	tmp += "form";
-	std::cout << tmp << "\n";
 	for (int i = 0; i < 3; i++)
 	{
 		if (tmp == forms[i])
