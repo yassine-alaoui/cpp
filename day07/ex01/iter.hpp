@@ -12,7 +12,7 @@ void	puts(T c)
 template <typename T>
 void	iter(T * ptr, size_t size, void(*funcptr)(T))
 {
-	for (int i = 0; i < size; i++)
+	for (size_t i = 0; i < size; i++)
 		funcptr(ptr[i]);
 }
 

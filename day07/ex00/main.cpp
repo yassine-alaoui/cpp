@@ -10,7 +10,7 @@ int main()
 	std::cout << max(1337, 42) << '\n';
 	std::cout << min(1337, 42) << '\n';
 	swap(num0, num1);
-	std::cout << num0 << " " << num1 << '\n-----------------\n';
+	std::cout << num0 << " " << num1 << "\n-----------------\n";
 	int a = 2;
 	int b = 3;
 	::swap( a, b );
