@@ -31,23 +31,23 @@ int main(int, char**)
     {
         numbers[-2] = 0;
     }
-    catch(const std::exception& e)
+    catch(const char* e)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << e << '\n';
     }
     try
     {
         numbers[MAX_VAL] = 0;
     }
-    catch(const std::exception& e)
+    catch(const char* e)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << e << '\n';
     }
 
     for (int i = 0; i < MAX_VAL; i++)
     {
         numbers[i] = rand();
     }
-    delete [] mirror;//
+    delete [] mirror;
     return 0;
 }

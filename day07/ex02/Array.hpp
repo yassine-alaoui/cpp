@@ -23,14 +23,14 @@ template <typename T>
 Array<T>::Array()
 {
 	n = 0;
-	ptr = new T;
+	ptr = new T();
 }
 
 template <typename T>
 Array<T>::Array(unsigned int p)
 {
 	n = p;
-	ptr = new T[p];
+	ptr = new T[p]();
 }
 
 template <typename T>
@@ -42,8 +42,10 @@ Array<T>::Array(Array const& val)
 template <typename T>
 Array<T> & Array<T>::operator=(Array<T> const& val)
 {
-	this->ptr = val.ptr;
 	this->n = val.n;
+	this->ptr = new T[n];
+	for (unsigned int i = 0; i < n; i++)
+		this->ptr[i] = val.ptr[i];
 	return *this;
 }
 
@@ -51,7 +53,7 @@ template <typename T>
 T & Array<T>::operator[](size_t index)
 {
 	if (index >= n)
-		throw std::exception();
+		throw "out of range";
 	return ptr[index];
 }
 
