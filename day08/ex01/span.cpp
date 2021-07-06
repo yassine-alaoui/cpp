@@ -7,7 +7,7 @@ const char *Span::Error::what() const throw()
 
 int		Span::shortestSpan()
 {
-	if (this->_N <= 1)
+	if (this->_N <= 1 || this->_I == 0)
 		throw Error();
 	int 			mini;
 	int 			mini1;
@@ -27,7 +27,7 @@ int		Span::shortestSpan()
 
 int		Span::longestSpan()
 {
-	if (this->_N <= 1)
+	if (this->_N <= 1 || this->_I == 0)
 		throw Error();
 	sort(this->mylist.begin(), this->mylist.end());
 	return (this->mylist.back() - this->mylist.front());
@@ -55,6 +55,15 @@ void	Span::addNumber(int num)
 	if (this->_I >= this->_N)
 		throw Error();
 	this->mylist.push_back(num);
+	this->_I++;
+}
+
+void	Span::addNumber_p(int *& num)
+{
+	if (this->_I >= this->_N)
+		throw Error();
+	for (unsigned int i = 0; i < this->_N; i++)
+		this->mylist.push_back(num[i]);
 	this->_I++;
 }
 

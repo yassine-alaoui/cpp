@@ -4,6 +4,15 @@ int main()
 {
 	std::list<int> container;
 
+	try
+	{
+		std::list<int>::iterator thenum = easyfind(container, 1337);
+		std::cout << *thenum << "\n";
+	}
+	catch(const std::exception& e)
+	{
+		std::cerr << "Not found!" << '\n';
+	}
 	container.push_back(42);
 	container.push_back(1337);
 	container.push_back(19);
