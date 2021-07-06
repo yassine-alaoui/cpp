@@ -4,7 +4,6 @@
 # include <iostream>
 # include <exception>
 # include <algorithm>
-# include <list>
 # include <vector>
 
 class Span
