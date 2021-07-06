@@ -16,7 +16,9 @@ class MutantStack : public std::stack<T>
 		typedef typename std::stack<T>::container_type::iterator iterator;
 		iterator end() {return this->c.end();}
 		iterator begin() {return this->c.begin();}
-		MutantStack(/* args */) {}
+		MutantStack(/* args */) {};
+		MutantStack(MutantStack const& val) { *this = val; }
+		MutantStack & operator=(MutantStack const& val) { (void)val; return *this; }
 		~MutantStack() {}
 };
 
